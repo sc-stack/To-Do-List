@@ -1,0 +1,1 @@
+A to-do list implementing object oriented js principles such as classes and factories. Npm and webpack will be used for this project
