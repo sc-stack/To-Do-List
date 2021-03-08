@@ -1,1 +1,1 @@
-console.log("Hello World");
+(()=>{const e=document.querySelector(".close");document.getElementById("add-btn").addEventListener("click",(()=>{document.querySelector(".form").style.display="flex",console.log("clicked")})),e.addEventListener("click",(()=>{document.querySelector(".form").style.display="none",console.log("clicked2")}))})();
