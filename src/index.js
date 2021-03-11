@@ -1,4 +1,10 @@
-//import {form} from "/modules/form.js";
+import toDo from "/modules/to-do.js";
+
+let t = new toDo('test', 'test ', 'test', 'test');
+
+
+
+
 
 
 const close = document.querySelector('.close');
@@ -11,7 +17,6 @@ addButton.addEventListener('click', () =>{
     //form popup
     const form = document.querySelector('.form');
     form.style.display = 'flex';
-    console.log('clicked');
 });
 
 
@@ -20,9 +25,14 @@ addButton.addEventListener('click', () =>{
 close.addEventListener('click', ()=>{
     const form = document.querySelector('.form');
     form.style.display = "none";
-    console.log('clicked2');
 });
 
-//let form = new form();
-
-//form.createForm();
+//submit button for form
+document.querySelector(".submit-button").addEventListener('click', () =>{
+    
+    let list = new toDo(document.getElementById('title').value, document.getElementById('priority').value, document.getElementById('dueDate'), 'placeholderValue');
+    test = list.title;
+    cnt++;
+    const form = document.querySelector('.form');
+    form.style.display = "none";
+});

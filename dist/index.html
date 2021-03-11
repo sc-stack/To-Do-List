@@ -15,22 +15,46 @@
     <header>
         <nav>
             <ul>
+                <li class = "current-projects">Current Projects</li>
                 <li>To-Do List</li>
+                <li><button id = "add-btn">+</button></li>
             </ul>
         </nav>
     </header>
     <main>
     <div id = "content">
+
         <div id = "content-wrap">
-        <button id = "add-btn">+</button>
         <!--
             Using DOM Manipulation add todos here
+            table will display the data
         -->
+        <table class = "to-dos">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    DueDate
+                </th>
+                <th>
+                    Priority
+                </th>
+            </tr>
+        </table>
         </div>
     </div>
     </main>
+    <!--
+        this is the modal form
+    -->
+    <div class = "vertical"></div>
     <div class = "form">
         <div class = "form-content">
+            <div>New To-Do</div>
             <div class = "close">+</div>
             <form>
                 <input type = "text" placeholder = "Title" id = "title">
@@ -38,6 +62,7 @@
                 <input type = "text" placeholder = "Due Date" id = "dueDate">
                 <input type = "submit" class = "submit-button" value = "Submit">
             </form>
+        </div>
         </div>
     <footer>
         <nav>

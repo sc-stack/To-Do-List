@@ -1,32 +1,51 @@
 body{
-    background-color: #111;
+    background-color: white;
 }
 
 header{
     width: 100%;
-    height: 100px;
+    height: 50px;
+    border-bottom: solid 1px pink;
 }
 
 header nav ul{
     display: block;
-    margin: 0 auto;
     width: fit-content;
+    margin: 0 auto;
 }
 
 header nav ul li{
     display: inline-block;
-    float: left;
-    margin: 20px 20px;
-    color: white;
-    border: solid white 3px;
-    border-radius: 25px;
-    font-family: 'montserrat', sans-serif
+    float: right;
+    margin: 10px 15px;
+    color: rgb(255,0,255);
+    border-radius: 4px;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'montserrat', sans-serif;
 }
 
-header nav ul li #btn{
-    color: white;
-    border-radius: 50%;
-    border: solid white 1px;
+.current-projects{
+    font-weight: 900;
+    padding-right: 10px;
+    font-family: "montserrat", sans-serif;
+    position: absolute;
+    left: 0;
+    font-size: 1.5vw;
+    margin-top: 15px;
+}
+
+#add-btn{
+    border: solid 3px pink;
+    position: absolute;
+    right: 0;
+    top:0;
+    float: right;
+    width: 10%;
+    margin: 20px 25px;
+    text-align: center;
+    color: rgb(255,0,255);
+    background-color: white;
 }
 
 #content{
@@ -39,16 +58,29 @@ header nav ul li #btn{
     padding-bottom: 2.5rem;
 }
 
-#add-btn{
-    display: block;
-    margin: 0 auto;
-    border: solid 1px white;
-    margin-bottom: 20px;
-    border-radius: 20%;
-    text-align: center;
-    width: 5%;
-    color: white;
+.to-dos{
+    display: table;
+    width: calc(100% - 15% - 40px);
+    margin-left: calc(15% + 40px);
+    margin-top: 20px;
+    border: 3px solid rgb(255,0,255);
+    border-radius: 12px;
+    table-layout: fixed;
 }
+
+th{
+    text-align: center;
+}
+
+.vertical{
+    position: absolute;
+    left: 15%;
+    height: 95%;
+    top: 0;
+    border-left: 6px solid black;
+    margin-top: 10px;
+}
+
 
 .form{
     width: 100%;
@@ -69,14 +101,31 @@ header nav ul li #btn{
     border-radius: 12px;
     text-align: center;
     position: relative;
+    color: rgb(255,0,255);
+    font-weight: 900;
+    font-family: "montserrat", sans-serif;
+    padding-top: 5px;
 }
 
-input{
+input[type=text] {
     width: 50%;
     display: block;
     margin: 15px auto;
-    float: left;
-    margin-left: 15px;
+    color: rgb(255,0,255);
+    font-weight: 900;
+    border: solid 5px pink;
+    background-color: white;
+    border-radius: 4px;
+}
+
+input[type=submit]{
+    display: block;
+    margin: 100px auto;
+    color: rgb(255,0,255);
+    font-weight: 900;
+    border: solid 5px pink;
+    background-color: white;
+    border-radius: 4px;
 }
 
 .close{
