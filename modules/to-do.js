@@ -1,4 +1,6 @@
 export default class toDo{
+    //givese the values that the todo list will have
+    //priority of 1 = highest 3 = lowestx
 
     constructor(title, description, dueDate, priority){
         this.title = title;
@@ -14,7 +16,7 @@ export default class toDo{
     }
 
     get title(){
-        return this.title;
+        return this._title;
     }
 
     set Description(description){
@@ -24,7 +26,7 @@ export default class toDo{
     }
 
     get Description(){
-        return this.description;
+        return this._description;
     }
 
     set dueDate(date){
@@ -34,7 +36,7 @@ export default class toDo{
     }
 
     get dueDate(){
-        return this.dueDate;
+        return this._dueDate;
     }
 
     set priority(p){
@@ -44,9 +46,12 @@ export default class toDo{
     }
 
     get priority(){
-        return this.priority;
+        return this._priority;
     }
 
+    getInArr(){
+        return [this._title, this._description, this._dueDate, this._priority];
+    }
 }
 
    
