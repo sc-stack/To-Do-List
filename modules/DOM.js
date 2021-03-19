@@ -12,20 +12,55 @@ export default class dom_Manipulator{
             this._parent = parent;
          }
     }
+    //creates the actual div with the todo elements inside
+    //appends the div to the parent aka "this"
+    //date and priority will be added later on
+    createExpandableDiv(title, description){
+        const div = document.createElement('div');
+        div.id = "wrapper";
+        const h1 = document.createElement("h1");
+        h1.innerHTML = title;
+        const checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
+        checkbox.id = "toggle";
+        const label = document.createElement('label');
+        label.setAttribute('for', 'toggle');
+        const innerDiv = document.createElement('div');
+        innerDiv.id = "expand";
+        const p = document.createElement('p');
+        p.innerHTML = description;
+        innerDiv.appendChild(p);
+        this.appendElements([div, h1, checkbox, label, innerDiv], document.querySelector('#content-wrap'));
+        console.log('fuck');
+    }
 
-    appendElements(arr){
+    appendElements(arr, parent){
+        //appends an array of elements to a parent element
         for(let i = 0;i < arr.length ; i++){
-            this.parent.appendChild(arr[i]);
+            parent.appendChild(arr[i]);
         }
     }
 
-    createElements(ele ,num){
-        //creates an array of a specific type of DOM element
-        let arr = [];
-        for(let i = 0;i < num; i++){
-            const type = document.createElement(ele);
-            arr.push(type);
+    getPriorityColor(num){
+        //gets the color to display based off current priority
+        if(num === 1){
+            return "Green";
+        }else if(num == 2){
+            return "Yellow";
+        }else{
+            return "Red";
         }
-        return arr;
+
+    }
+
+    showPriorityState(num){
+        //creates 3 divs
+        if(this.getPriorityColor(num) === "Green"){
+            //toggle green class on button 1
+        }else if(this.getPriorityColor(num) == "Yellow"){
+            //toggle yellow class on button 2
+        }else{
+            //toggle red class on button 3
+        }
     }
 }

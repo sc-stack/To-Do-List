@@ -19,13 +19,13 @@ export default class toDo{
         return this._title;
     }
 
-    set Description(description){
+    set description(description){
         if(description){ 
             this._description = description;
         }
     }
 
-    get Description(){
+    get description(){
         return this._description;
     }
 
@@ -50,6 +50,8 @@ export default class toDo{
     }
 
     getInArr(){
+        //gets the todo elements in an array
+        console.log(this._description);
         return [this._title, this._description, this._dueDate, this._priority];
     }
 }
