@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div id = "page-container">
     <header>
         <nav>
             <ul>
@@ -23,22 +24,9 @@
     </header>
     <main>
     <div id = "content">
-        <div id = "content-wrap">
-            <!--
-          <div id = "wrapper">
-                <h1>Expand CSS Section</h1>
-                <input id = "toggle" type = "checkbox" checked>
-                <label for = "toggle"></label>
-                <div class = "expand">
-                <section>
-                    <h2>Content</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </section>
-           </div>
+      <div id = "content-wrap">
         </div>
-    -->
-      </div>
-    </div>
+     </div>
     </main>
     <!--
         this is the modal form
@@ -49,13 +37,17 @@
             <div class = "close">+</div>
             <form>
                 <input type = "text" placeholder = "Title" id = "title">
-                <input type = "text" placeholder = "Description" id = "description">
-                <input type = "text" placeholder = "Due Date" id = "dueDate">
-                <input type = "text" placeholder ="Priority" id = "priority">
+                <textarea id = "description" placeholder = "Description" name = "description" rows = "4" cols = "50"></textarea>
+                <input type = "date" placeholder = "Due Date" id = "dueDate">
+                Priority:
+                <input type = "radio" class = "priority" name = "priority" value = "1">1
+                <input type = "radio" class = "priority" name = "priority" value = "2">2
+                <input type = "radio" class = "priority" name = "priority" value = "3">3
                 <input type = "button" class = "submit-button" value = "Submit">
             </form>
         </div>
         </div>
+        <div class = .push></div>
     <footer>
         <nav>
             <ul>
@@ -63,6 +55,7 @@
             </ul>
         </nav>
     </footer>
+    </div>
     <script src = "main.js"></script> 
 </body>
 </html>

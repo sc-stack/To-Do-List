@@ -1,37 +1,24 @@
 export default class dom_Manipulator{
-    constructor(parent){
-        this.parent = parent;
+    constructor(){
     }
 
-    get parent(){
-        return this._parent;
-    }
 
-    set parent(parent){
-        if(parent){
-            this._parent = parent;
-         }
-    }
     //creates the actual div with the todo elements inside
     //appends the div to the parent aka "this"
-    //date and priority will be added later on
-    createExpandableDiv(title, description){
-        const div = document.createElement('div');
-        div.id = "wrapper";
+    //expandability will be added later on
+    createExpandableDiv(title, description, date, priority){
+        const div = document.createElement("div");
+        div.classList.add("todo");
         const h1 = document.createElement("h1");
         h1.innerHTML = title;
-        const checkbox = document.createElement('input');
-        checkbox.setAttribute('type', 'checkbox');
-        checkbox.id = "toggle";
-        const label = document.createElement('label');
-        label.setAttribute('for', 'toggle');
-        const innerDiv = document.createElement('div');
-        innerDiv.id = "expand";
+        const h3 = document.createElement('h3');
+        h3.innerHTML = "Due: " + date;
+        const h4 = document.createElement('h4');
+        h4.innerHTML = "Priority: " + priority;
         const p = document.createElement('p');
         p.innerHTML = description;
-        innerDiv.appendChild(p);
-        this.appendElements([div, h1, checkbox, label, innerDiv], document.querySelector('#content-wrap'));
-        console.log('fuck');
+        this.appendElements([h1,h3,h4, p], div);
+        document.querySelector("#content-wrap").appendChild(div);
     }
 
     appendElements(arr, parent){
@@ -41,26 +28,24 @@ export default class dom_Manipulator{
         }
     }
 
-    getPriorityColor(num){
-        //gets the color to display based off current priority
-        if(num === 1){
-            return "Green";
-        }else if(num == 2){
-            return "Yellow";
-        }else{
-            return "Red";
-        }
-
-    }
-
     showPriorityState(num){
         //creates 3 divs
-        if(this.getPriorityColor(num) === "Green"){
+        let radioValue = getRadioValue(document.getElementsByName('priority'));
+        if(radioValue == "1"){
             //toggle green class on button 1
-        }else if(this.getPriorityColor(num) == "Yellow"){
+        }else if(radioValue == "2"){
             //toggle yellow class on button 2
         }else{
             //toggle red class on button 3
         }
+    }
+    //https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
+    getRadioValue(ele){
+        for(let i = 0;i < ele.length; i++){
+            if(ele[i].checked){
+                return ele[i].value;
+            }
+        }
+        return "";
     }
 }

@@ -24,9 +24,9 @@ close.addEventListener('click', ()=>{
 //submit button for form
 //appends the stuff on the todo to the dom
 document.querySelector(".submit-button").addEventListener('click', () =>{
-    let list = new toDo(document.getElementById('title').value, document.getElementById('description').value, document.getElementById('dueDate').value, document.getElementById('priority').value);
-    const divAdder = new dom_Manipulator('content-wrap');
-    divAdder.createExpandableDiv(list.title, list.description);
+    let DOM = new dom_Manipulator();
+    let list = new toDo(document.getElementById('title').value, document.getElementById('description').value, document.getElementById('dueDate').value, DOM.getRadioValue(document.getElementsByClassName("priority")));
+    DOM.createExpandableDiv(list.title, list.description, list.dueDate, list.priority);
     const form = document.querySelector('.form');
     form.style.display = "none";
 });

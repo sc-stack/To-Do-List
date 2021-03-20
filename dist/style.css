@@ -1,7 +1,12 @@
 body{
     background-color: white;
 }
-
+h1{
+    text-decoration: underline;
+    font-weight: 1000;
+}
+/*the header
+*/
 header{
     width: 100%;
     height: 50px;
@@ -25,6 +30,12 @@ header nav ul li{
     font-family: 'montserrat', sans-serif;
 }
 
+#page-container{
+    position: relative;
+    min-height: 100vh;
+}
+/* styling certain header elements(ex:the add a todo button)
+*/
 .current-projects{
     font-weight: 900;
     padding-right: 10px;
@@ -50,90 +61,54 @@ header nav ul li{
 
 #content{
     position: relative;
-    max-height: 10%;
+    min-height: 100%;
     overflow: hidden;
     width: calc(50%-600px);
-    margin: 10px 300px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: -50px;
+    padding-bottom: 2.5rem;
 }
 
 #content-wrap{
+    /*
     padding-bottom: 2.5rem;
     background-color: rgb(255,0,255);
-    min-height: 10vh;
     padding: 1px 0;
     box-shadow: 0 3px 5px rgba(0,0,0, .3);
     color: white;
     font-family: 'montserrat', sans-serif;
+    */
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
 }
 
-#test{
-    width: 100%;
-}
-
-h1{
-    text-align: center;
-}
-
-p{
-    font-size: 21px;
-    font-weight: 200;
-
-}
-/* the actual dropdown menu and how it toggles is styled here 
+/*the divs with the to do info in them
+make them expand later
 */
-input[type = checkbox]{
-    display: none;
-    visibility: hidden;
-}
-
-label{
-    display: block;
-    padding: .05em;
+.todo{
+    width: 300px;
+    height: 50vh;
+    border: 4px outset rgb(255,0,255);
     text-align: center;
-    border-bottom: 5px dashed gray;
-    color: white;
-    transition: .2s;
-    
-}
-
-label:hover{
-    color: #000;
-}
-
-label:before{
-    font-weight: 800;
-    font-size: 25px;
-    content: "+";
-    vertical-align: text-top;
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    margin: -5px 5px;
-    border-radius: 50%;
-    border: 1px solid white;
-}
-
-.expand{
-    height: 0;
+    margin-bottom: 5px;
+    color: rgb(255,0,255);
+    border-radius: 12px;
+    padding-top: 0px;
+    font-weight: 900;
+    word-wrap: break-word;
+    font-family: 'montserrat', sans-serif;
     overflow: hidden;
-    transition: height 0.5s;
 }
 
-.expand h2{
-    text-align: center;
-}
-section{
-    padding: 0 15px;
-}
 
-#toggle:checked ~ .expand{
-    height: 500px;
-}
-
-#toggle:checked ~ label:before{
-    content: '-';
-}
-
+/*
+the form which asks the user to enter the info in
+*/
 .form{
     width: 100%;
     height: 100%;
@@ -159,7 +134,7 @@ section{
     padding-top: 5px;
 }
 
-input[type=text] {
+input[type=text]  {
     width: 50%;
     display: block;
     margin: 15px auto;
@@ -168,6 +143,35 @@ input[type=text] {
     border: solid 5px pink;
     background-color: white;
     border-radius: 4px;
+}
+
+input[type=date]{
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+    font-weight: 900;
+    border: solid 5px pink;
+    background-color: white;
+    border-radius: 4px;
+}
+
+#description{
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+    color: rgb(255,0,255);
+    font-weight: 900;
+    border: solid 5px pink;
+    background-color: white;
+    border-radius: 4px;
+    font-family: "montserrat", sans-serif;
+}
+
+input[type = radio]{
+    border-radius: 2px;
+    color: rgb(255,0,255);
+    border: solid 5px rgb(255,0,255);
+    vertical-align: text-top;
 }
 
 input[type=button]{
@@ -187,12 +191,24 @@ input[type=button]{
     transform: rotate(45deg);
     cursor: pointer;
 }
+/*
+stuff to fix the footer, thanks to freecodecamp for the info
+*/
+.content{
+    margin-bottom: -50px;
+    min-
+}
+
+.push{
+    height: 50px;
+}
 
 footer{
     width: 100%;
     position: absolute;
     bottom: 0;
     height: 2.5rem;
+    
 }
 
 footer nav ul{
