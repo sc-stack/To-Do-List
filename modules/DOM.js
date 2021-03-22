@@ -17,7 +17,22 @@ export default class dom_Manipulator{
         h4.innerHTML = "Priority: " + priority;
         const p = document.createElement('p');
         p.innerHTML = description;
-        this.appendElements([h1,h3,h4, p], div);
+        const close = document.createElement("div");
+        close.innerHTML = "+";
+        close.classList.add('close-todo');
+        //closes the div
+        close.addEventListener('click', ()=>{
+            div.remove();
+        });
+        const a = document.createElement('a');
+        a.setAttribute('href', '#');
+        a.innerHTML = "^";
+        a.classList.add('expander');
+        a.addEventListener('click', () =>{
+            div.classList.toggle('expand');
+            
+        });
+        this.appendElements([h1,h3,h4, p, close, a], div);
         document.querySelector("#content-wrap").appendChild(div);
     }
 
