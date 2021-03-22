@@ -88,14 +88,14 @@ header nav ul li{
 }
 
 /*the divs with the to do info in them
-make them expand later
+these divs are expandable
 */
 .todo{
     width: 300px;
-    height: 50vh;
+    max-height: 120px;
     border: 4px outset rgb(255,0,255);
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     color: rgb(255,0,255);
     border-radius: 12px;
     padding-top: 0px;
@@ -103,7 +103,29 @@ make them expand later
     word-wrap: break-word;
     font-family: 'montserrat', sans-serif;
     overflow: hidden;
+    position: relative;
+    transition: all .3s ease;
 }
+
+.expand{
+    max-height: 50vh;
+}
+
+.expander{
+    position: absolute;
+    top: 100px;
+    margin-top: 2px;
+}
+
+.close-todo{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 45px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+/*
 
 
 /*

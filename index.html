@@ -36,13 +36,13 @@
             <div>New To-Do</div>
             <div class = "close">+</div>
             <form>
-                <input type = "text" placeholder = "Title" id = "title">
-                <textarea id = "description" placeholder = "Description" name = "description" rows = "4" cols = "50"></textarea>
-                <input type = "date" placeholder = "Due Date" id = "dueDate">
+                <input type = "text" placeholder = "Title" id = "title" required>
+                <textarea id = "description" placeholder = "Description" name = "description" rows = "4" cols = "50" required></textarea>
+                <input type = "date" placeholder = "Due Date" id = "dueDate" required>
                 Priority:
-                <input type = "radio" class = "priority" name = "priority" value = "1">1
-                <input type = "radio" class = "priority" name = "priority" value = "2">2
-                <input type = "radio" class = "priority" name = "priority" value = "3">3
+                <input type = "radio" class = "priority" name = "priority" value = "1" required>1
+                <input type = "radio" class = "priority" name = "priority" value = "2" required>2
+                <input type = "radio" class = "priority" name = "priority" value = "3" required>3
                 <input type = "button" class = "submit-button" value = "Submit">
             </form>
         </div>
