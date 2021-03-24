@@ -42,6 +42,31 @@ export default class dom_Manipulator{
             parent.appendChild(arr[i]);
         }
     }
+    //appends a dropdown element to the DOM navbar
+    //add an event listener to the a 
+    //where everytime you click on it
+    //the divs associated with that project will appear
+    appendDropable(name, project){
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.setAttribute('href', '#');
+        a.innerHTML = name;
+        a.addEventListener('click', ()=>{
+            let curProjectName = document.querySelector("#current-project-name");
+         //   if(curProjectName.innerHTML != a.innerHTML){ 
+                curProjectName.innerHTML = name;
+                const parent = document.querySelector('#content-wrap');
+                parent.innerHTML = "";
+                    for(let i = 0;i < project.toDos.length ; i++){ 
+                        let toDo = project.toDos[i];
+                        this.createExpandableDiv(toDo.title, toDo.description, toDo.dueDate, toDo.priority);
+                    }  
+          //  }
+        });
+        li.appendChild(a);
+        document.querySelector(".append-projects").appendChild(li);
+    }
+    
 
     showPriorityState(num){
         //creates 3 divs
@@ -63,4 +88,5 @@ export default class dom_Manipulator{
         }
         return "";
     }
+
 }

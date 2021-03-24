@@ -12,7 +12,9 @@
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "date-fns": "^2.19.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sc-stack/To-Do-List.git"

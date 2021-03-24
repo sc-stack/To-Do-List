@@ -54,6 +54,10 @@ export default class toDo{
         console.log(this._description);
         return [this._title, this._description, this._dueDate, this._priority];
     }
+
+    getDaysLeft(){
+        let date = this._dueDate;
+    }
 }
 
    
