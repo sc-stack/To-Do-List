@@ -14,13 +14,33 @@
 <body>
     <div id = "page-container">
     <header>
-        <nav>
-            <ul>
-                <li class = "current-projects">Current Projects</li>
-                <li>To-Do List</li>
-                <li><button id = "add-btn">+</button></li>
+       <!-- <nav>
+            <a class = "current-projects" href = "#">Current Projects<ul>
+                <li>Test</li>
+                <li>Test</li>
             </ul>
+        </a>
+            <ul><li id = "li">To-Do List</li></ul>
+            <button id = "add-btn">+</button>
         </nav>
+    -->
+    <nav id = "header">
+        <p>TO-DO-LIST</p>
+        <ul>
+            <li><a href = "index.html">Home</a></li>
+            <li><a href = "#">Projects</a>
+                <ul class = "append-projects">
+                    <!--
+                        project names will be added here via the DOM
+                    -->
+                </ul>
+            </li>
+        </ul>
+        <div id = "current-project-name">Default Project</div>
+        <button id = "add-projects">New Project</button>
+        <button id = "add-btn">New To-Do</button>
+    </nav>
+
     </header>
     <main>
     <div id = "content">
@@ -29,11 +49,11 @@
      </div>
     </main>
     <!--
-        this is the modal form
+        this is the modal form for adding a todo
     -->
     <div class = "form">
         <div class = "form-content">
-            <div>New To-Do</div>
+            <div>To-Do</div>
             <div class = "close">+</div>
             <form>
                 <input type = "text" placeholder = "Title" id = "title" required>
@@ -47,13 +67,31 @@
             </form>
         </div>
         </div>
+        <!--
+            this is the modal form with an input for adding 
+            a project, just need the name
+        -->
+        <div class = "project-form">
+            <div class = "project-form-content">
+                <div>New Project</div>
+                <div class = "project-close-button">+</div>
+                <form>
+                    <input type = "text" placeholder = "Project Name" id = "project-name" required>
+                    <input type = "button" class = "submit-project-button" value = "Submit">
+                </form>
+            </div>
+        </div>
+        <!--
+            the footer
+            very basic, just links back to the odin project
+        -->
         <div class = .push></div>
     <footer>
         <nav>
             <ul>
                 <li><a href = "https://www.theodinproject.com/">This Project is Part of The Odin Project's Curriculum</a></li>
             </ul>
-        </nav>
+        <nav>
     </footer>
     </div>
     <script src = "main.js"></script> 
